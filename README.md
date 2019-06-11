@@ -1,0 +1,2 @@
+# tenbit-bom
+🎯maven bom
