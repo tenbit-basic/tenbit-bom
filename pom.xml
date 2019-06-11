@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.tenbit.hare</groupId>
+    <artifactId>hare-bom</artifactId>
+    <name>${project.artifactId}</name>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        
+        <!--maven properties, used for plugins-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.deploy.skip>false</maven.deploy.skip>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <java.version>1.8</java.version>
+
+        <!--  dependencies -->
+        <spring.version>4.3.23.RELEASE</spring.version>
+        <lombok.version>1.18.4</lombok.version>
+        <junit.version>4.12</junit.version>
+
+        <!--http://maven.apache.org/plugins/-->
+        <plugin-clean.version>3.1.0</plugin-clean.version>
+        <plugin-compiler.version>3.8.0</plugin-compiler.version>
+        <plugin-deploy.version>3.0.0-M1</plugin-deploy.version>
+        <plugin-failsafe.version>2.22.1</plugin-failsafe.version>
+        <plugin-install.version>3.0.0-M1</plugin-install.version>
+        <plugin-resources.version>3.1.0</plugin-resources.version>
+        <plugin-site.version>3.7.1</plugin-site.version>
+        <plugin-surefire.version>2.22.1</plugin-surefire.version>
+        <plugin-verifier.version>1.1</plugin-verifier.version>
+        <plugin-source.version>3.0.1</plugin-source.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>tenbit-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://nexus.leechain.top/repository/tenbit-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>tenbit-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://nexus.leechain.top/repository/tenbit-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+
+            <!--Compiles Java sources.-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${plugin-compiler.version}</version>
+            </plugin>
+
+            <!--Build a source-JAR from the currentSegment project.-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${plugin-source.version}</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--Deploy the built artifact to the remote repository.-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${plugin-deploy.version}</version>
+            </plugin>
+
+            <!--Run the JUnit unit tests in an isolated classloader.-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${plugin-surefire.version}</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
