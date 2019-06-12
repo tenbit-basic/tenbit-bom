@@ -25,9 +25,11 @@
         <java.version>1.8</java.version>
 
         <!--  dependencies -->
-        <spring.version>4.3.23.RELEASE</spring.version>
-        <lombok.version>1.18.4</lombok.version>
+        <spring.version>4.3.24.RELEASE</spring.version>
+        <lombok.version>1.18.8</lombok.version>
         <junit.version>4.12</junit.version>
+        <servlet-api.version>2.5</servlet-api.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
 
         <!--http://maven.apache.org/plugins/-->
         <plugin-clean.version>3.1.0</plugin-clean.version>
@@ -54,10 +56,31 @@
             </dependency>
 
             <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <scope>provided</scope>
+                <version>${javax.servlet-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <scope>provided</scope>
+                <version>${servlet-api.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <scope>import</scope>
             </dependency>
 
         </dependencies>
