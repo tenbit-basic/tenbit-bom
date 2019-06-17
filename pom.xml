@@ -25,6 +25,10 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <java.version>1.8</java.version>
 
+        <!-- tenbit dependencies -->
+        <tenbit-core.version>1.0.0-SNAPSHOT</tenbit-core.version>
+        <tenbit-lite.version>1.0.0-SNAPSHOT</tenbit-lite.version>
+
         <!--  dependencies -->
         <spring.version>4.3.24.RELEASE</spring.version>
         <lombok.version>1.18.8</lombok.version>
@@ -107,6 +111,18 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>cn.tenbit.basic</groupId>
+                <artifactId>tenbit-core</artifactId>
+                <version>${tenbit-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.tenbit.basic</groupId>
+                <artifactId>tenbit-lite</artifactId>
+                <version>${tenbit-lite.version}</version>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
             <dependency>
