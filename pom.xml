@@ -57,7 +57,7 @@
         <joda-time.version>2.10.2</joda-time.version>
         <cglib.version>3.2.12</cglib.version>
         <mybatis-plus2.version>2.3.3</mybatis-plus2.version>
-        <spring-boot-starter.version>1.5.20.RELEASE</spring-boot-starter.version>
+        <spring-boot-starter.version>1.5.21.RELEASE</spring-boot-starter.version>
         <httpclient.version>4.5.9</httpclient.version>
 
         <!--apache commons-->
