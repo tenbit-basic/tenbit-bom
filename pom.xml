@@ -31,6 +31,7 @@
 
         <!--  dependencies -->
         <spring.version>4.3.24.RELEASE</spring.version>
+        <spring-boot.version>1.5.21.RELEASE</spring-boot.version>
         <lombok.version>1.18.8</lombok.version>
         <junit.version>4.12</junit.version>
         <servlet-api.version>2.5</servlet-api.version>
@@ -57,7 +58,6 @@
         <joda-time.version>2.10.2</joda-time.version>
         <cglib.version>3.2.12</cglib.version>
         <mybatis-plus2.version>2.3.3</mybatis-plus2.version>
-        <spring-boot-starter.version>1.5.21.RELEASE</spring-boot-starter.version>
         <httpclient.version>4.5.9</httpclient.version>
 
         <!--apache commons-->
@@ -236,7 +236,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
-                <version>${spring-boot-starter.version}</version>
+                <version>${spring-boot.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework.boot</groupId>
@@ -667,6 +667,16 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
                 <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
