@@ -28,6 +28,8 @@
         <!-- tenbit dependencies -->
         <tenbit-core.version>1.0.0-SNAPSHOT</tenbit-core.version>
         <tenbit-lite.version>1.0.0-SNAPSHOT</tenbit-lite.version>
+        <tenbit-soa-core.version>1.0.0-SNAPSHOT</tenbit-soa-core.version>
+        <tenbit-web-core.version>1.0.0-SNAPSHOT</tenbit-web-core.version>
 
         <!--  dependencies -->
         <spring.version>4.3.24.RELEASE</spring.version>
@@ -122,6 +124,18 @@
                 <groupId>cn.tenbit.basic</groupId>
                 <artifactId>tenbit-lite</artifactId>
                 <version>${tenbit-lite.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.tenbit.extra</groupId>
+                <artifactId>tenbit-soa-core</artifactId>
+                <version>${tenbit-soa-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.tenbit.extra</groupId>
+                <artifactId>tenbit-web-core</artifactId>
+                <version>${tenbit-web-core.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
